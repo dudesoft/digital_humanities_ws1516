@@ -31,6 +31,12 @@ import com.qualcomm.vuforia.samples.VuforiaSamples.R;
 
 public class SampleApplicationSession implements UpdateCallbackInterface {
 
+   // INSERT APP KEY HERE!
+   String appKey =
+         "AUs+bz//////AAAAAeUfgIU9nkUiuRm75HKFPnIjXx9IbiyGu7uZmzgE/RdIJWKcQe6rSSOJrnJNPRH" +
+               "/lFphY0wqI0HBEXGwMQPxADT8Q5rFfBEEY0/EbUWJTSTU0zq8bzDX1VHknc3U6zgax9HsWkaxM9p" +
+               "+U9YcMnMgeZ3XfhnIwQrqeQE3cVqm1sioXYnRr0YzNI4qVKtsHfVCDqmi04vp0nBDLHTkL8Ch42nYJ3JHz+GndOjpwjaMmmiAf48Qecye3x0RXifvCDs6IVBkAZWsaNu8D07IDkgvotxoQtxhTCaGg5HWMFxIFzPplDCodrQ5R5FkSm0TCxXlDiySalaEI/1LW6GNz0Kc1xPE+8Df+zDngNjq70m2dWy4";
+
    // An async task to initialize Vuforia asynchronously.
    private class InitVuforiaTask extends AsyncTask<Void, Integer, Boolean> {
       // Initialize with invalid value:
@@ -39,7 +45,7 @@ public class SampleApplicationSession implements UpdateCallbackInterface {
       protected Boolean doInBackground(Void... params) {
          // Prevent the onDestroy() method to overlap with initialization:
          synchronized (mShutdownLock) {
-            Vuforia.setInitParameters(mActivity, mVuforiaFlags, "");
+            Vuforia.setInitParameters(mActivity, mVuforiaFlags, appKey);
 
             do {
                // Vuforia.init() blocks until an initialization step is
@@ -160,6 +166,7 @@ public class SampleApplicationSession implements UpdateCallbackInterface {
          mSessionControl.onInitARDone(vuforiaException);
       }
    }
+
    private static final String LOGTAG = "Vuforia_Sample_Applications";
    // Reference to the current activity
    private Activity mActivity;

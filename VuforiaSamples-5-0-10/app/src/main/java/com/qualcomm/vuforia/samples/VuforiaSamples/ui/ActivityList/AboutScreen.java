@@ -37,6 +37,7 @@ public class AboutScreen extends Activity implements OnClickListener {
          return true;
       }
    }
+
    private static final String LOGTAG = "AboutScreen";
    private TextView mAboutTextTitle;
    private WebView mAboutWebText;
